@@ -31,7 +31,7 @@ def buckets() -> str:
         region_name="eu-central-1",
     )
     buckets = s3.buckets.all()
-    return render_template("index.html", buckets=buckets)
+    return render_template("index.html", buckets=["precios-justos-datasets"])
 
 
 @app.route("/buckets/<bucket_name>", defaults={"path": ""})
