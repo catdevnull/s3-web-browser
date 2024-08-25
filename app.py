@@ -19,18 +19,6 @@ def index() -> str:
         region_name="eu-central-1",
     )
     buckets = s3.buckets.all()
-    return render_template("index.html", buckets=buckets)
-
-
-@app.route("/buckets")
-def buckets() -> str:
-    s3 = boto3.resource(
-        "s3",
-        aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-        region_name="eu-central-1",
-    )
-    buckets = s3.buckets.all()
     return render_template("index.html", buckets=["precios-justos-datasets"])
 
 
